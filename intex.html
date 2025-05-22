@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>???</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+text-align: center;
+margin-top: 100px;
+}
+#link {
+display: none;
+margin-top: 20px;
+}
+</style>
+</head>
+<body>
+<h1>Kliknij mnie tyle razy ile odwołałaś spotkanie w ciagu ostatniego roku</h1>
+<button id="clickButton">Kliknij mnie</button>
+<p id="counter">Kliknięcia: 0</p>
+<a id="link" href="https://drive.google.com/file/d/1iX9R-7ouxkqIDfp22huPsVLaBw2dspOW/view?usp=drivesdk" target="_blank">Wszystkiego najlepszego!</a>
+
+<script>
+let count = 0;
+const button = document.getElementById("clickButton");
+const counter = document.getElementById("counter");
+const link = document.getElementById("link");
+
+button.addEventListener("click", () => {
+count++;
+counter.textContent = "Kliknięcia: " + count;
+
+if (count >= 1000) {
+link.style.display = "inline-block";
+button.disabled = true;
+}
+});
+</script>
+</body>
+</html>
